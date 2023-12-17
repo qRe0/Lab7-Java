@@ -5,11 +5,11 @@ public class RepairWork implements Serializable {
     private String firm;
     private String workType;
     private String unit;
-    private double costPerUnit;
+    private String costPerUnit;
     private Date executionDate;
     private double volume;
 
-    public RepairWork(String firm, String workType, String unit, double costPerUnit, Date executionDate, double volume) {
+    public RepairWork(String firm, String workType, String unit, String costPerUnit, Date executionDate, double volume) {
         this.firm = firm;
         this.workType = workType;
         this.unit = unit;
@@ -43,11 +43,11 @@ public class RepairWork implements Serializable {
         this.unit = unit;
     }
 
-    public double getCostPerUnit() {
+    public String getCostPerUnit() {
         return costPerUnit;
     }
 
-    public void setCostPerUnit(double costPerUnit) {
+    public void setCostPerUnit(String costPerUnit) {
         this.costPerUnit = costPerUnit;
     }
 

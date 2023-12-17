@@ -61,7 +61,7 @@ public class Main {
             System.out.print("Единица измерения: ");
             String unit = scanner.next();
             System.out.print("Стоимость за единицу: ");
-            double costPerUnit = scanner.nextDouble();
+            String costPerUnit = String.valueOf(scanner.nextDouble());
             System.out.print("Дата исполнения (yyyy-MM-dd): ");
             Date executionDate = new SimpleDateFormat("yyyy-MM-dd").parse(scanner.next());
             System.out.print("Объем: ");
