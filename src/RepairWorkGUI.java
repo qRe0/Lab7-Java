@@ -8,11 +8,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-//
+
 public class RepairWorkGUI extends JFrame {
 
     private RepairWorkDatabase database;
     private JTextArea repairWorksTextArea;
+    private JLabel statusLabel;
 
     public RepairWorkGUI() {
         try {
@@ -30,6 +31,34 @@ public class RepairWorkGUI extends JFrame {
         contentPane.setLayout(new BorderLayout(0, 0));
         setContentPane(contentPane);
 
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        JMenuItem openItem = new JMenuItem("Open");
+        JMenuItem saveItem = new JMenuItem("Save");
+
+        openItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Implement logic for opening files
+                statusLabel.setText("Opened file...");
+            }
+        });
+
+        saveItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Implement logic for saving files
+                statusLabel.setText("Saved file...");
+            }
+        });
+
+        fileMenu.add(openItem);
+        fileMenu.add(saveItem);
+        menuBar.add(fileMenu);
+        setJMenuBar(menuBar);
+
+        statusLabel = new JLabel("Status: Ready");
+        statusLabel.setBorder(BorderFactory.createLoweredBevelBorder());
+        contentPane.add(statusLabel, BorderLayout.SOUTH);
+
         repairWorksTextArea = new JTextArea();
         JScrollPane scrollPane = new JScrollPane(repairWorksTextArea);
         contentPane.add(scrollPane, BorderLayout.CENTER);
@@ -40,7 +69,7 @@ public class RepairWorkGUI extends JFrame {
                 showAddDialog();
             }
         });
-        contentPane.add(addButton, BorderLayout.SOUTH);
+        contentPane.add(addButton, BorderLayout.NORTH);
 
         refreshRepairWorks();
 
@@ -136,3 +165,6 @@ public class RepairWorkGUI extends JFrame {
         });
     }
 }
+
+
+
