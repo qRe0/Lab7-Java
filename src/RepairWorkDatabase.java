@@ -96,7 +96,7 @@ public class RepairWorkDatabase {
         }
         index.get(key).add(position);
     }
-
+//
     private <K> List<RepairWork> getObjectsByIndex(Map<K, List<Long>> index, K key) {
         List<RepairWork> repairWorks = new ArrayList<>();
         List<Long> positions = index.get(key);

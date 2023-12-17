@@ -51,7 +51,7 @@ public class Main {
             e.printStackTrace();
         }
     }
-
+//
     private static void addRepairWork(RepairWorkDatabase database, Scanner scanner) {
         try {
             System.out.print("Фирма: ");
